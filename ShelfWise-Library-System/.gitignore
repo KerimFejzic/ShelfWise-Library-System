@@ -1,0 +1,11 @@
+# Local credentials and dependencies
+backend/config/config.php
+backend/config/.env
+.env
+backend/vendor/
+# Runtime files
+backend/logs/*
+!backend/logs/.gitkeep
+*.log
+.DS_Store
+.vscode/

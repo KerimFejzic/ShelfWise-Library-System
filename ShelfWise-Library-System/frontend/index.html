@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ShelfWise | Library Management</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="#dashboard"><span class="brand-mark">S</span><span>ShelfWise<small>Library management</small></span></a>
+    <p class="nav-caption">WORKSPACE</p>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#dashboard" data-view="dashboard">▦ <span>Dashboard</span></a>
+      <a href="#books" data-view="books">▤ <span>Books</span></a>
+      <a href="#categories" data-view="categories">◈ <span>Categories</span></a>
+      <a href="#members" data-view="members">♙ <span>Members</span></a>
+      <a href="#loans" data-view="loans">⇄ <span>Loans</span></a>
+      <a href="#reservations" data-view="reservations">◷ <span>Reservations</span></a>
+      <a href="#fines" data-view="fines">◇ <span>Fines</span></a>
+      <a href="#profile" data-view="profile">◎ <span>Profile</span></a>
+    </nav>
+    <div class="sidebar-foot"><span class="demo-dot"></span> Milestone 1 · Static demo</div>
+  </aside>
+  <div class="main-area">
+    <header class="topbar"><button class="mobile-menu" id="menuButton" aria-label="Toggle menu">☰</button><span class="crumb">ShelfWise / <strong id="currentView">Dashboard</strong></span><div class="top-actions"><span class="demo-pill">SAMPLE DATA</span><a href="#login">Log in</a><a class="avatar" href="#profile" title="Profile">SW</a></div></header>
+    <main id="app" aria-live="polite"><p>Loading…</p></main>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
