@@ -14,3 +14,19 @@
 2. Mistake observed: [Describe a second actual issue you found, if one occurs]. How detected: [Your test/review]. Fix: [What you changed].
 
 Do not submit invented mistakes. If you have not yet found two, keep testing and record real issues and fixes.
+
+
+## Milestone 2 — 1 November 2026
+**Tools:** ChatGPT (GPT-6) assisted with merging the Milestone 1 starter and Milestone 2 DAO add-on, writing a reusable CRUD verification script and documentation. Verify all generated files against Lab 03 before submission.
+
+**Representative user request:** “Give whole project with everything implemented for milestone 2 with all requirements.”
+
+**Local verification to record:**
+- PHP syntax checking: [result after running `php -l`]
+- SQL import into MySQL: [actual result]
+- `test_dao.php`: [actual result]
+- `test_crud.php`: [actual result]
+
+**Two real AI issues and fixes (complete after your own review; do not invent results):**
+1. Issue: [what you found] / How noticed: [actual check] / Fix: [what you changed]
+2. Issue: [what you found] / How noticed: [actual check] / Fix: [what you changed]
