@@ -1,0 +1,6 @@
+{
+  "name": "shelfwise/library-system",
+  "description": "ShelfWise REST API for IT2001",
+  "require": {"php": ">=8.2", "ext-pdo": "*", "ext-pdo_mysql": "*", "flightphp/core": "^3.19", "zircote/swagger-php": "^6.12"},
+  "config": {"sort-packages": true}
+}

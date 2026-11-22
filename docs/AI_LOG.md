@@ -30,3 +30,12 @@ Do not submit invented mistakes. If you have not yet found two, keep testing and
 **Two real AI issues and fixes (complete after your own review; do not invent results):**
 1. Issue: [what you found] / How noticed: [actual check] / Fix: [what you changed]
 2. Issue: [what you found] / How noticed: [actual check] / Fix: [what you changed]
+
+
+## Milestone 3 — AI assistance (complete and verify before submission)
+- **Tool used:** ChatGPT GPT-6.
+- **Task:** Used uploaded Labs 04, 05, 06 and prior ShelfWise source to draft a service layer, FlightPHP REST API, Swagger/OpenAPI attribute classes, Open Library ISBN lookup and test instructions.
+- **Automated checks:** PHP syntax and archive checks performed by assistant. **Local Apache/Composer/Swagger/MySQL API testing has NOT yet been completed by the assistant.**
+- **Your actual test results:** [fill in exact route URLs, response status codes and examples after testing].
+- **Actual AI error 1 and fix:** [only write an issue you truly observed and how you corrected it].
+- **Actual AI error 2 and fix:** [only write a second genuine issue and fix].

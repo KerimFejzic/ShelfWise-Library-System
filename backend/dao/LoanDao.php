@@ -8,4 +8,8 @@ class LoanDao extends BaseDao
     {
         parent::__construct('loans', ['user_id', 'book_id', 'borrowed_at', 'due_at', 'returned_at', 'status']);
     }
+    public function lock_book(int $id): ?array
+    {
+        return $this->query_unique('SELECT * FROM books WHERE id = :id FOR UPDATE', ['id' => $id]);
+    }
 }
