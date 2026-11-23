@@ -25,3 +25,10 @@ M1 is planning and static SPA only. M2 adds schema and DAO. M3 adds services/rou
 
 ## AI review
 Explain any proposed changes in simple terms and log AI usage in `docs/AI_LOG.md`. Never pretend untested features work.
+
+## Milestone 3 additions
+- Services under `backend/services/` perform validation/business logic only; never put SQL in routes or services.
+- FlightPHP routes under `backend/routes/` return JSON.
+- Swagger docs under `backend/public/v1/docs/` must describe real endpoints and statuses.
+- Milestone 3 routes are local-only because JWT and role protections are reserved for later milestones.
+- Use Composer (`flightphp/core` ^3.19, `zircote/swagger-php` ^6.12); vendor must stay untracked.

@@ -1,0 +1,16 @@
+<?php
+use OpenApi\Attributes as OA;
+#[OA\Schema(schema:'Loan',type:'object',properties:[new OA\Property(property:'id',type:'integer'),new OA\Property(property:'user_id',type:'integer'),new OA\Property(property:'book_id',type:'integer'),new OA\Property(property:'borrowed_at',type:'string',format:'date'),new OA\Property(property:'due_at',type:'string',format:'date'),new OA\Property(property:'returned_at',type:'string'),new OA\Property(property:'status',type:'string')])]
+class LoanSchema {}
+#[OA\Schema(schema:'LoanInput',type:'object',properties:[new OA\Property(property:'user_id',type:'integer'),new OA\Property(property:'book_id',type:'integer'),new OA\Property(property:'borrowed_at',type:'string',format:'date'),new OA\Property(property:'due_at',type:'string',format:'date'),new OA\Property(property:'returned_at',type:'string'),new OA\Property(property:'status',type:'string')])]
+class LoanInputSchema {}
+#[OA\Get(path:'/api/loans',tags:['Loan'],summary:'List loans',parameters:[new OA\Parameter(name:'search',in:'query',required:false,schema:new OA\Schema(type:'string'))],responses:[new OA\Response(response:200,description:'List',content:new OA\JsonContent(type:'array',items:new OA\Items(ref:'#/components/schemas/Loan'))),new OA\Response(response:500,description:'Server error')])]
+class LoanOperation1 {}
+#[OA\Get(path:'/api/loans/{id}',tags:['Loan'],summary:'Get loan by ID',parameters:[new OA\Parameter(name:'id',in:'path',required:true,schema:new OA\Schema(type:'integer'))],responses:[new OA\Response(response:200,description:'Found',content:new OA\JsonContent(ref:'#/components/schemas/Loan')),new OA\Response(response:404,description:'Not found'),new OA\Response(response:500,description:'Internal server error')])]
+class LoanOperation2 {}
+#[OA\Post(path:'/api/loans',tags:['Loan'],summary:'Create loan',requestBody:new OA\RequestBody(required:true,content:new OA\JsonContent(ref:'#/components/schemas/LoanInput')),responses:[new OA\Response(response:201,description:'Created'),new OA\Response(response:400,description:'Invalid request'),new OA\Response(response:409,description:'Duplicate record'),new OA\Response(response:500,description:'Internal server error')])]
+class LoanOperation3 {}
+#[OA\Put(path:'/api/loans/{id}',tags:['Loan'],summary:'Update loan',parameters:[new OA\Parameter(name:'id',in:'path',required:true,schema:new OA\Schema(type:'integer'))],requestBody:new OA\RequestBody(required:true,content:new OA\JsonContent(ref:'#/components/schemas/LoanInput')),responses:[new OA\Response(response:200,description:'Updated'),new OA\Response(response:400,description:'Invalid request'),new OA\Response(response:404,description:'Not found'),new OA\Response(response:409,description:'Conflict'),new OA\Response(response:500,description:'Internal server error')])]
+class LoanOperation4 {}
+#[OA\Delete(path:'/api/loans/{id}',tags:['Loan'],summary:'Delete loan',parameters:[new OA\Parameter(name:'id',in:'path',required:true,schema:new OA\Schema(type:'integer'))],responses:[new OA\Response(response:200,description:'Deleted'),new OA\Response(response:404,description:'Not found'),new OA\Response(response:409,description:'Record is referenced'),new OA\Response(response:500,description:'Internal server error')])]
+class LoanOperation5 {}

@@ -1,0 +1,16 @@
+<?php
+use OpenApi\Attributes as OA;
+#[OA\Schema(schema:'Reservation',type:'object',properties:[new OA\Property(property:'id',type:'integer'),new OA\Property(property:'user_id',type:'integer'),new OA\Property(property:'book_id',type:'integer'),new OA\Property(property:'reserved_at',type:'string',format:'date'),new OA\Property(property:'status',type:'string')])]
+class ReservationSchema {}
+#[OA\Schema(schema:'ReservationInput',type:'object',properties:[new OA\Property(property:'user_id',type:'integer'),new OA\Property(property:'book_id',type:'integer'),new OA\Property(property:'reserved_at',type:'string',format:'date'),new OA\Property(property:'status',type:'string')])]
+class ReservationInputSchema {}
+#[OA\Get(path:'/api/reservations',tags:['Reservation'],summary:'List reservations',parameters:[new OA\Parameter(name:'search',in:'query',required:false,schema:new OA\Schema(type:'string'))],responses:[new OA\Response(response:200,description:'List',content:new OA\JsonContent(type:'array',items:new OA\Items(ref:'#/components/schemas/Reservation'))),new OA\Response(response:500,description:'Server error')])]
+class ReservationOperation1 {}
+#[OA\Get(path:'/api/reservations/{id}',tags:['Reservation'],summary:'Get reservation by ID',parameters:[new OA\Parameter(name:'id',in:'path',required:true,schema:new OA\Schema(type:'integer'))],responses:[new OA\Response(response:200,description:'Found',content:new OA\JsonContent(ref:'#/components/schemas/Reservation')),new OA\Response(response:404,description:'Not found'),new OA\Response(response:500,description:'Internal server error')])]
+class ReservationOperation2 {}
+#[OA\Post(path:'/api/reservations',tags:['Reservation'],summary:'Create reservation',requestBody:new OA\RequestBody(required:true,content:new OA\JsonContent(ref:'#/components/schemas/ReservationInput')),responses:[new OA\Response(response:201,description:'Created'),new OA\Response(response:400,description:'Invalid request'),new OA\Response(response:409,description:'Duplicate record'),new OA\Response(response:500,description:'Internal server error')])]
+class ReservationOperation3 {}
+#[OA\Put(path:'/api/reservations/{id}',tags:['Reservation'],summary:'Update reservation',parameters:[new OA\Parameter(name:'id',in:'path',required:true,schema:new OA\Schema(type:'integer'))],requestBody:new OA\RequestBody(required:true,content:new OA\JsonContent(ref:'#/components/schemas/ReservationInput')),responses:[new OA\Response(response:200,description:'Updated'),new OA\Response(response:400,description:'Invalid request'),new OA\Response(response:404,description:'Not found'),new OA\Response(response:409,description:'Conflict'),new OA\Response(response:500,description:'Internal server error')])]
+class ReservationOperation4 {}
+#[OA\Delete(path:'/api/reservations/{id}',tags:['Reservation'],summary:'Delete reservation',parameters:[new OA\Parameter(name:'id',in:'path',required:true,schema:new OA\Schema(type:'integer'))],responses:[new OA\Response(response:200,description:'Deleted'),new OA\Response(response:404,description:'Not found'),new OA\Response(response:409,description:'Record is referenced'),new OA\Response(response:500,description:'Internal server error')])]
+class ReservationOperation5 {}
